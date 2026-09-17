@@ -49,6 +49,39 @@
         a, iframe, button {
             cursor: url('cursorhover.png'), auto;
         }
+
+        .indie-badge {
+    display: inline-block;
+    width: 88px;
+    height: 31px;
+    position: relative;
+    cursor: url('cursor.png'), pointer;
+}
+.indie-badge span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 88px;
+    height: 31px;
+    background-size: contain;
+    image-rendering: pixelated; /* чтобы пиксели в Paint оставались четкими */
+}
+/* Обычный вид */
+.normal-btn {
+    background-image: url('button.png');
+    display: block;
+}
+.active-btn {
+    background-image: url('button-active.png');
+    display: none; /* прячем активную кнопку по умолчанию */
+}
+/* Эффект при НАЖАТИИ мышкой (:active) */
+.indie-badge:active .normal-btn {
+    display: none; /* прячем обычную */
+}
+.indie-badge:active .active-btn {
+    display: block; /* показываем ту, что нарисована для клика */
+}
     </style>
 </head>
 <body>
@@ -84,6 +117,20 @@
 
         <footer>
             <p>Iris Gris | 2026</p>
+            <!-- Интерактивная инди-кнопка -->
+<div style="margin-top: 25px; text-align: center;">
+    <p style="font-size: 0.8rem; margin-bottom: 8px; color: #ff79c6; font-family: monospace;">
+        Делай что написано 🎀
+    </p>
+    
+    <a href="https://github.io" class="indie-badge">
+        <!-- По умолчанию показывается обычная кнопка -->
+        <span class="normal-btn"></span>
+        <!-- При клике будет показываться активная -->
+        <span class="active-btn"></span>
+    </a>
+</div>
+
         </footer>
     </div>
 <!-- СКРИПТ ДЛЯ ИСКРЯЩИХСЯ ЗВЕЗДОЧЕК -->
