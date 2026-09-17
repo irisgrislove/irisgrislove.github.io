@@ -86,6 +86,60 @@
             <p>Iris Gris | 2026</p>
         </footer>
     </div>
+<!-- СКРИПТ ДЛЯ ИСКРЯЩИХСЯ ЗВЕЗДОЧЕК -->
+<script>
+// Настройки магии ✨
+const STAR_COLOR = "#b3dcfd"; // Цвет звездочек (сейчас нежно-золотой, можно поменять на #ff79c6 для розового)
+const STAR_SIZE = 18;         // Максимальный размер звездочки в пикселях
+const SPAWN_SPEED = 4;        // Чем меньше цифра, тем больше звезд сыпется
+
+let mouseX = 0, mouseY = 0;
+let moveCount = 0;
+
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    moveCount++;
+    
+    // Создаем искру только при движении мыши с определенной частотой
+    if (moveCount % SPAWN_SPEED === 0) {
+        createSparkle(mouseX + window.scrollX, mouseY + window.scrollY);
+    }
+});
+
+function createSparkle(x, y) {
+    const sparkle = document.createElement('div');
+    
+    // Рисуем четырехконечную ретро-звездочку с помощью спецсимвола
+    sparkle.innerHTML = '✦'; 
+    sparkle.style.position = 'absolute';
+    sparkle.style.left = x + (Math.random() * 20 - 10) + 'px';
+    sparkle.style.top = y + (Math.random() * 20 - 10) + 'px';
+    sparkle.style.color = STAR_COLOR;
+    sparkle.style.fontSize = (Math.random() * (STAR_SIZE - 8) + 8) + 'px';
+    sparkle.style.pointerEvents = 'none'; // Чтобы звезды не мешали кликать по ссылкам
+    sparkle.style.zIndex = '999999';
+    sparkle.style.transition = 'transform 0.8s ease-out, opacity 0.8s ease-out';
+    sparkle.style.opacity = '1';
+    
+    // Случайное небольшое смещение при падении
+    const driftX = Math.random() * 40 - 20;
+    const driftY = Math.random() * 50 + 20;
+    
+    document.body.appendChild(sparkle);
+    
+    // Анимация падения и растворения
+    setTimeout(() => {
+        sparkle.style.transform = `translate(${driftX}px, ${driftY}px) scale(0.2) rotate(${Math.random() * 180}deg)`;
+        sparkle.style.opacity = '0';
+    }, 10);
+    
+    // Удаляем звездочку, когда она полностью исчезла
+    setTimeout(() => {
+        sparkle.remove();
+    }, 800);
+}
+</script>
 
 </body>
 </html>
