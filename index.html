@@ -113,8 +113,8 @@ function createSparkle(x, y) {
     // Рисуем четырехконечную ретро-звездочку с помощью спецсимвола
     sparkle.innerHTML = '✦'; 
     sparkle.style.position = 'absolute';
-    sparkle.style.left = x + (Math.random() * 20 - 15) + 'px';
-    sparkle.style.top = y + (Math.random() * 20 + 15) + 'px';
+    sparkle.style.left = x + (Math.random() * 20) + 'px';
+    sparkle.style.top = y + (Math.random() * 20) + 'px';
     sparkle.style.color = STAR_COLOR;
     sparkle.style.fontSize = (Math.random() * (STAR_SIZE - 8) + 8) + 'px';
     sparkle.style.pointerEvents = 'none'; // Чтобы звезды не мешали кликать по ссылкам
