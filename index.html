@@ -19,18 +19,13 @@
             cursor: url('images/cursor.png'), auto;
         }
         .side-player {
-            position: absolute;
+            position: fixed;
             right: 20px;       /* Расстояние от правого края экрана */
             top: 25%;          /* Центрируем по вертикали */
             transform: translateY(-50%); /* Идеальное выравнивание по центру высоты */
             z-index: 10000;    /* Плеер всегда будет поверх фона */
         }
-
-/* Эффект легкого покачивания при наведении (как во флеш-играх) */
-        .side-player:hover {
-            transform: translateY(-50%) scale(1.03);
-        }
-
+        
 /* На мобильных экранах скрываем плеер, чтобы он не перекрывал текст блога */
         @media (max-width: 1000px) {
             .side-player {
