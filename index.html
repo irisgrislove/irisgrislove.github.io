@@ -19,15 +19,11 @@
             cursor: url('images/cursor.png'), auto;
         }
         .side-player {
-            position: fixed;
+            position: absolute;
             right: 20px;       /* Расстояние от правого края экрана */
-            top: 50%;          /* Центрируем по вертикали */
+            top: 25%;          /* Центрируем по вертикали */
             transform: translateY(-50%); /* Идеальное выравнивание по центру высоты */
             z-index: 10000;    /* Плеер всегда будет поверх фона */
-    
-    /* Дополнительные инди-эффекты */
-            filter: drop-shadow(0 0 10px rgba(116, 192, 252, 0.4)); /* Легкое свечение */
-            transition: transform 0.2s ease;
         }
 
 /* Эффект легкого покачивания при наведении (как во флеш-играх) */
@@ -116,7 +112,7 @@
     </div>
 
     <div class="side-player">
-        <img src="images/mp3player.png" alt="MP3 Player Widget" style="width: 180px; height: auto; display: block; image-rendering: pixelated;">
+        <img src="images/mp3player.png" alt="MP3 Player Widget" style="width: 280px; height: auto; display: block; image-rendering: pixelated;">
     </div>
 
     <div class="container">
