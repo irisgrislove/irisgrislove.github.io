@@ -18,6 +18,30 @@
             /* ВОТ ЭТА СТРОКА ДОБАВЛЯЕТ КУРСОР: */
             cursor: url('images/cursor.png'), auto;
         }
+        .side-player {
+            position: fixed;
+            right: 20px;       /* Расстояние от правого края экрана */
+            top: 50%;          /* Центрируем по вертикали */
+            transform: translateY(-50%); /* Идеальное выравнивание по центру высоты */
+            z-index: 10000;    /* Плеер всегда будет поверх фона */
+    
+    /* Дополнительные инди-эффекты */
+            filter: drop-shadow(0 0 10px rgba(116, 192, 252, 0.4)); /* Легкое свечение */
+            transition: transform 0.2s ease;
+        }
+
+/* Эффект легкого покачивания при наведении (как во флеш-играх) */
+        .side-player:hover {
+            transform: translateY(-50%) scale(1.03);
+        }
+
+/* На мобильных экранах скрываем плеер, чтобы он не перекрывал текст блога */
+        @media (max-width: 1000px) {
+            .side-player {
+                display: none;
+            }
+        }
+
         .container { 
             max-width: 1100px; 
             margin: 0 auto; 
@@ -90,7 +114,11 @@
     <div style="text-align: center; margin-bottom: 15px;">
         <img src="images/banner.png" alt="rainsorrow blog banner" style="max-width: 100%; height: auto;">
     </div>
-    
+
+    <div class="side-player">
+        <img src="images/player.png" alt="MP3 Player Widget" style="width: 180px; height: auto; display: block; image-rendering: pixelated;">
+    </div>
+
     <div class="container">
         <h1><a href="https://www.glitter-graphics.com"><img src="https://dl6.glitter-graphics.net/pub/575/575266us4crzygeq.gif" width=32 height=32 border=0></a>Iris Gris</h1>
         <p>Привет! Это мой независимый инди-веб уголок. Здесь я буду собирать свои мысли, выкладывать каверы, демки и всякие крутые штуки.</p>
