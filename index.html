@@ -18,6 +18,58 @@
             /* ВОТ ЭТА СТРОКА ДОБАВЛЯЕТ КУРСОР: */
             cursor: url('images/cursor.png'), auto;
         }
+
+        
+        .side-menu {
+            position: absolute;
+            left: calc(50% - 530px); 
+            top: 150px; /* На той же высоте, что и правый плеер для симметрии */
+            width: 140px;
+            background: rgba(15, 23, 42, 0.95); 
+            border: 3px double #ff79c6;        
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(255, 121, 198, 0.2);
+            z-index: 10000;
+        }
+
+        .menu-title {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #74c0fc; /* Неоново-голубой */
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .menu-divider {
+            color: #4834d4;
+            font-size: 0.7rem;
+            margin: 8px 0;
+        }
+
+        .side-menu .nav-link {
+            display: block; /* Делаем ссылки друг под другом */
+            color: #ff79c6;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 6px 0;
+            transition: all 0.2s ease;
+        }
+
+        .side-menu .nav-link:hover {
+        color: #74c0fc;
+        text-shadow: 0 0 8px rgba(116, 192, 252, 0.6);
+        transform: translateX(3px); /* Ссылка будет мило сдвигаться вправо при наведении! */
+        }
+
+/* Скрываем на узких экранах, чтобы не наползало на текст */
+        @media (max-width: 1150px) {
+            .side-menu {
+                display: none;
+            }
+        }
+
         .side-player {
             position: fixed;
             right: 20px;       /* Расстояние от правого края экрана */
@@ -110,13 +162,14 @@
         <img src="images/mp3player.png" alt="MP3 Player Widget" style="width: 280px; height: auto; display: block; image-rendering: pixelated;">
     </div>
 
-    <div class="container">
-       <div style="text-align: center; margin-bottom: 20px; font-size: 1.1rem;">
-        <a href="index.html" class="nav-link">Главная 🏠</a> 
-        <span style="color: #74c0fc; margin: 0 10px;">✦</span>
-        <a href="music.html" class="nav-link">Моя Музыка 🎵</a>
+   
+    <div class="side-menu">
+        <div class="menu-title">НАВИГАЦИЯ</div>
+        <a href="index.html" class="nav-link">Главная</a> 
+        <div class="menu-divider">✦ ✦ ✦</div>
+        <a href="music.html" class="nav-link">Моя Музыка</a>
     </div>
-        
+
         <h1><a href="https://www.glitter-graphics.com"><img src="https://dl6.glitter-graphics.net/pub/575/575266us4crzygeq.gif" width=32 height=32 border=0></a>from iris gris with love</h1>
         <p>Привет! Это мой независимый инди-веб уголок. Здесь я буду собирать свои мысли, выкладывать каверы, демки и всякие крутые штуки.</p>
         
