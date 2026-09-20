@@ -118,7 +118,25 @@
             font-size: 0.8rem; 
             color: #57606f; 
         }
+        .post {
+            border: 4px solid black;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
 
+        .post-date {
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        .post h2 {
+            margin-top: 5px;
+        }
+
+        .post-text {
+        min-height: 200px;
+        }
+        
         a, iframe, button {
             cursor: url('images/cursorhover.png'), auto;
         }
@@ -194,9 +212,17 @@
         <div class="media-box">
             <h2>Текстовые посты</h2>
             <p>Тут будут просто записи блога</p>
-            <!-- Место для картинок -->
         </div>
-        <!-- СЕКЦИЯ ДЛЯ МЕДИА -->
+
+        <div class="post">
+            <div class="post-date">20.09.2026, 22:45</div>
+            <h2>Название поста</h2>
+            <div class="post-text">
+                <p>Текст поста.</p>
+                <p>Ещё немного текста.</p>
+            </div>
+        </div>
+            
         <div class="media-box">
             <h2>🎵 Мои треки / Демки</h2>
             <!-- Вставьте скопированный код SoundCloud прямо сюда ниже: -->
